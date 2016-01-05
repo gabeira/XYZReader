@@ -21,19 +21,22 @@
                 <!--suppress AndroidLintContentDescription -->
                 <ImageView
                     android:id="@+id/photo"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp" />
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:transitionName="@string/detail_image_transition_name" />
 
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="112dp"
+                    android:layout_height="@dimen/detail_card_top_margin"
                     android:background="@drawable/photo_background_protection" />
 
             </FrameLayout>
 
             <com.example.xyzreader.ui.MaxWidthLinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="@dimen/detail_card_top_margin"
                 android:background="#fff"
@@ -74,7 +77,7 @@
                         android:textColor="#8fff" />
                 </LinearLayout>
 
-                <TextView
+                <WebView
                     android:id="@+id/article_body"
                     style="?android:attr/textAppearanceMedium"
                     android:layout_width="match_parent"
@@ -85,6 +88,7 @@
                     android:paddingBottom="@dimen/detail_body_bottom_margin"
                     android:textColor="@color/primary_text"
                     android:textColorLink="@color/accent"
+                    android:textAlignment="inherit"
                     android:textSize="@dimen/detail_body_text_size" />
 
             </com.example.xyzreader.ui.MaxWidthLinearLayout>
